@@ -6,7 +6,7 @@ public abstract class UserInput {
 	this.processor = processor;
     }
 
-    public abstract takeInInput();
+    public abstract takeInput();
 
     public void sendInput() {
 	this.processor.getPhrase(currentInput);
