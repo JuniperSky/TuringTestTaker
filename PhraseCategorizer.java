@@ -4,11 +4,11 @@ import java.util.List;
 
 public abstract class PhraseCategorizer {
 	protected String phrase;
-	protected List<String> list;
+	protected PhraseSeparator separator;
 	
 	public void addPhrase(String phrase) {
 		this.phrase = phrase;
 	}
-	public abstract void getList();
-	public abstract List<String> categorize();
+	
+	public abstract List<List<String>> categorize();
 }
