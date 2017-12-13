@@ -1,5 +1,4 @@
-package generalPackage;
-
+package Project;
 import java.util.List;
 
 public class PhraseProcessor {
@@ -8,13 +7,13 @@ public class PhraseProcessor {
 	protected SentenceCategorizer sentenceCategorizer;
 	protected WordCategorizer wordCategorizer;
 	protected ResponseAssembler assembler;
-	
+ 
 	public PhraseProcessor() {
 		this.sentenceCategorizer = new SentenceCategorizer();
 		this.wordCategorizer = new WordCategorizer();
 		this.assembler = new ResponseAssembler();
 	}
-	
+ 
 	public void addPhrase(String phrase) {
 		this.phrase = phrase;
 	}
@@ -22,12 +21,12 @@ public class PhraseProcessor {
 		sentenceCategorizer.addPhrase(phrase);
 		return sentenceCategorizer.categorize();
 	}
-	
+ 
 	public List<List<String>> getRelevantWords() {
 		wordCategorizer.addPhrase(phrase);
 		return wordCategorizer.categorize();
 	}
-	
+ 
 	public String getResponse() {
 		List<List<String>> relevantWords = getRelevantWords();
 		List<List<String>> sentenceTypes = getSentenceType();
@@ -36,5 +35,5 @@ public class PhraseProcessor {
 		assembler.getRelevantWords();
 		assembler.determineSentenceType();
 		return assembler.assembleSentence();
-	}
+ 	}
 }

@@ -1,5 +1,4 @@
-package generalPackage;
-
+package Project;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,9 +10,9 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class WordCategorizer extends PhraseCategorizer {
-	
+ 
 	POSTaggerME tagger;
-	
+ 
 	public WordCategorizer() {
 		this.separator = new PhraseSeparator();
 		try {
@@ -25,9 +24,9 @@ public class WordCategorizer extends PhraseCategorizer {
 		} catch(IOException e) {
 			System.out.println(e.getMessage());
 		}
-		
+  
 	}
-	
+ 
 	public List<List<String>> categorize() {
 		List<List<String>> categories = new ArrayList<List<String>>();
 		List<String> nouns = new ArrayList<String>();

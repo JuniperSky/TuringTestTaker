@@ -1,5 +1,4 @@
-package generalPackage;
-
+package Project;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -13,7 +12,7 @@ public class PhraseSeparator {
 	private String phrase;
 	private SentenceDetectorME sentenceDetector;
 	private WhitespaceTokenizer tokenizer;
-	
+ 
 	public PhraseSeparator() {
 		try {
 			FileInputStream sdReference = new FileInputStream("C:\\OpenNLP_models\\en-sent.bin");
@@ -25,16 +24,16 @@ public class PhraseSeparator {
 			System.out.println(e.getMessage());
 		}
 	}
-	
+ 
 	public void addPhrase(String input) {
 		this.phrase = input;
 	}
-	
+ 
 	public String[] separateSentences() {
 		String[] separatedSentences = sentenceDetector.sentDetect(phrase);
 		return separatedSentences;
 	}
-	
+ 
 	public String[] separateWords() {
 		String[] separatedWords = tokenizer.tokenize(phrase);
 		return separatedWords;

@@ -1,14 +1,13 @@
-package generalPackage;
-
+package Project;
 import java.util.ArrayList;
 import java.util.List;
 
 public class SentenceCategorizer extends PhraseCategorizer {
-	
+ 
 	public SentenceCategorizer() {
 		this.separator = new PhraseSeparator();
 	}
-	
+ 
 	public List<List<String>> categorize() {
 		List<List<String>> categories = new ArrayList<List<String>>();
 		List<String> statements = new ArrayList<String>();
@@ -30,6 +29,6 @@ public class SentenceCategorizer extends PhraseCategorizer {
 		}
 		return categories;
 	}
-	
-	
+ 
+ 
 }
