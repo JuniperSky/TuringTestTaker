@@ -16,7 +16,7 @@ public class WordCategorizer extends PhraseCategorizer {
 	public WordCategorizer() {
 		this.separator = new PhraseSeparator();
 		try {
-			FileInputStream taggerReference = new FileInputStream("C:\\OpenNLP_models\\en-pos-maxent.bin");
+			FileInputStream taggerReference = new FileInputStream("C:\\Users\\soopa\\Desktop\\CMPU203\\Turing_Eclipse\\bin\\resources\\en-pos-maxent.bin");
 			POSModel model = new POSModel(taggerReference);
 			this.tagger = new POSTaggerME(model);
 		} catch(FileNotFoundException e) {

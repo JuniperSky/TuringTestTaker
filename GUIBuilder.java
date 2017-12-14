@@ -6,7 +6,6 @@ import java.io.*;
 
 public class GUIBuilder {
     private TuringTestGUI gui;
-    private static String logHistory = "Hello!";
 
     public GUIBuilder() {
     	gui = new TuringTestGUI();
@@ -38,8 +37,7 @@ public class GUIBuilder {
     public void buildChatLog() {
     	//I'm referring to this as "Chat Log 1" at the moment because
     	//we may end up adding a second chat log for the second human.
-    	String textInScreen = getLogHistory();
-    	gui.chatLog1 = new JTextArea(textInScreen, 10, 15);
+    	gui.chatLog1 = new JTextArea("Hello!",10, 15);
     	gui.chatLog1.setBackground(Color.WHITE);
     	gui.chatLog1.setLineWrap(true);
     	gui.chatLog1.setWrapStyleWord(true);
@@ -99,7 +97,4 @@ public class GUIBuilder {
     	gui.north.add(gui.getUserInput);
     }
     
-    public static String getLogHistory() {
-        return logHistory;
-     }
 }
