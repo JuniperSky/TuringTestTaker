@@ -37,6 +37,12 @@ public class PhraseSeparator {
 	
 	public String[] separateWords() {
 		String[] separatedWords = tokenizer.tokenize(phrase);
+		int length = separatedWords.length;
+		for(int i = 0; i < length; i++) {
+			String currentWord = separatedWords[i];
+			String cleanedWord = currentWord.replaceAll("[^a-zA-Z ]", "").toLowerCase();
+			separatedWords[i] = cleanedWord;
+		}
 		return separatedWords;
 	}
 }
