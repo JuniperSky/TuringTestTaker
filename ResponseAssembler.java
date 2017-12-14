@@ -1,8 +1,12 @@
+<<<<<<< HEAD
 package generalPackage;
 
 import java.io.*;
 import java.nio.channels.FileChannel;
 import java.nio.channels.Pipe.SourceChannel;
+=======
+package Project;
+>>>>>>> ff6317d363dce7aa912502676c825554130e2456
 import java.util.List;
 
 import opennlp.tools.tokenize.WhitespaceTokenizer;
@@ -12,6 +16,7 @@ public class ResponseAssembler {
 	private List<List<String>> inputSentences;
 	private SentenceMaker sentenceMaker;
 	private String wordAssociations;
+<<<<<<< HEAD
 	private List<String> responseWords;
 	
 	private RandomAccessFile randomTextFile;
@@ -38,15 +43,21 @@ public class ResponseAssembler {
 		} catch (IOException e) {
 			System.out.println(e.getMessage());
 		}
+=======
+ 
+	public ResponseAssembler() {
+  
+>>>>>>> ff6317d363dce7aa912502676c825554130e2456
 	}
-	
+ 
 	public void addInputWords(List<List<String>> relevantWords) {
 		this.inputWords = relevantWords;
 	}
-	
+ 
 	public void addInputSentences(List<List<String>> sentenceTypes) {
 		this.inputSentences = sentenceTypes;
 	}
+<<<<<<< HEAD
 	
 	public void newFile(String name) {
 		this.wordAssociations = name;
@@ -79,15 +90,26 @@ public class ResponseAssembler {
 				}
 				bufferedReader.close();
 			}
+=======
+ 
+	public void determineSentenceType() {
+		if (inputSentences.get(1).isEmpty()) {
+   
+>>>>>>> ff6317d363dce7aa912502676c825554130e2456
 		}
 		
 		
 	}
+<<<<<<< HEAD
 	
 	public void updateFile() {
 		
+=======
+	public void getRelevantWords() {
+  
+>>>>>>> ff6317d363dce7aa912502676c825554130e2456
 	}
-	
+ 
 	public String assembleSentence() {
 		sentenceMaker.getRelevantWords(responseWords);
 		return sentenceMaker.assembleSentence();
