@@ -7,7 +7,7 @@ import java.io.*;
 
 public class TuringTestGUI extends JPanel implements ActionListener{
     //Constants for window size
-    private static int width = 300;
+	private static int width = 300;
     private static int height = 350;
   
     //private instance variables to be instantiated in the constructor
