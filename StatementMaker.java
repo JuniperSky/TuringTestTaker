@@ -1,4 +1,4 @@
-package general;
+package edu.vassar.cs;
 
 public class StatementMaker extends SentenceMaker {
   /**

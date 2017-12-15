@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="javadoc">
+    <target name="javadoc">
+        <javadoc access="public" author="true" classpath="C:\Users\soopa\.p2\pool\plugins\org.hamcrest.core_1.3.0.v201303031735.jar;target/test-classes;C:\Users\soopa\.p2\pool\plugins\org.junit_4.12.0.v201504281640\junit.jar;C:\Users\soopa\.m2\repository\org\apache\opennlp\opennlp-tools\1.8.3\opennlp-tools-1.8.3.jar;C:\Users\soopa\.m2\repository\junit\junit\3.8.1\junit-3.8.1.jar" destdir="doc" doctitle="Turing Test Taker " nodeprecated="false" nodeprecatedlist="false" noindex="false" nonavbar="false" notree="false" packagenames="edu.vassar.cs" source="1.7" sourcepath="src/main/resources;src/test/java;src/main/java;" splitindex="true" use="true" version="true"/>
+    </target>
+</project>

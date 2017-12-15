@@ -1,4 +1,4 @@
-package general;
+package edu.vassar.cs;
 
 import java.io.IOException;
 
@@ -22,11 +22,6 @@ public class TypedInput {
     this.processor.addPhrase(currentInput);
     response = this.processor.getResponse();
   }
-
-  //public void sendInput() {
-  //The text input is sent to the PhraseProcessor class
-  //this.processor.addPhrase(currentInput);
-  //}
     
   public String returnInput() {
     return response;

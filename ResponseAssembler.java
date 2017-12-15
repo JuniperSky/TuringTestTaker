@@ -1,4 +1,4 @@
-package general;
+package edu.vassar.cs;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -11,8 +11,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import opennlp.tools.tokenize.WhitespaceTokenizer;
-import utility.WeightedWord;
-import utility.WordNetwork;
 
 public class ResponseAssembler {
   //The categorized input words we got from the phrase processor:

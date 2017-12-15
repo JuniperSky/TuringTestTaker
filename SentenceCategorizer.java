@@ -1,4 +1,4 @@
-package general;
+package edu.vassar.cs;
 
 import java.util.ArrayList;
 import java.util.List;

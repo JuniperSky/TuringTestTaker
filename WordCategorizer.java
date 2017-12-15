@@ -1,4 +1,4 @@
-package general;
+package edu.vassar.cs;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -21,7 +21,7 @@ public class WordCategorizer extends PhraseCategorizer {
     this.separator = new PhraseSeparator();
     try {
       FileInputStream taggerReference = 
-          new FileInputStream("C:\\OpenNLP_models\\en-pos-maxent.bin");
+          new FileInputStream("C:\\Users\\soopa\\Desktop\\CMPU203\\turing\\src\\main\\resources\\en-pos-maxent.bin");
       POSModel model = new POSModel(taggerReference);
       this.tagger = new POSTaggerME(model);
     } catch (FileNotFoundException e) {

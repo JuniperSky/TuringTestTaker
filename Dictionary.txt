@@ -1,0 +1,29 @@
+***
+vassar
+vassar 2.5 N
+college 2.5 N
+is 2.5 V
+a 2.5 D
+***
+college
+vassar 0.25 N
+college 0.25 N
+is 0.25 V
+a 0.25 D
+***
+is
+vassar 0.2 N
+college 0.2 N
+is 0.2 V
+a 0.2 D
+name 0.2 N
+***
+a
+vassar 0.25 N
+college 0.25 N
+is 0.25 V
+a 0.25 D
+***
+name
+name 0.5 N
+is 0.5 V

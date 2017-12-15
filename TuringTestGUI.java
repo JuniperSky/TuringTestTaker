@@ -1,5 +1,4 @@
-
-package general;
+package edu.vassar.cs;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -103,45 +102,4 @@ public class TuringTestGui extends JPanel implements ActionListener {
       System.exit(0);
     }
   }
-    
-    
-
-
-  //  //TRANSLATE TXT FILE METHOD
-  //  //This method will be called by the action listener for JTextField
-  //  public void processInfo(){
-  //    //Where the content of the file will be stored as a String
-  //    String line;
-  //    //Where the content of the file will be stored as an edited array
-  //    String[] token;
-  //    //BufferedReader reads the input file
-  //    BufferedReader fileIn = null;
-  //    //try-catch that instantiates BufferedReader to read the file
-  //    try{
-  //      fileIn = new BufferedReader(new FileReader(title));
-  //    }
-  //    catch(IOException ioe){
-  //      title = JOptionPane.showInputDialog("Please enter a file" +
-  //                                          "to read from and then \n" +
-  //                                          "press \"Process Input\" button:");
-  //    }
-  //    //try-catch (loop?)
-  //    try{
-  //      while((line = fileIn.readLine()) != null){
-  //        //Replaces non-letters with empty String and splits String into
-  //        //array based on whitespace between words
-  //        token = line.replaceAll("[^a-zA-Z' ]", "").split("\\s+");
-  //        
-  //        
-  //      }
-  //    }
-  //    catch(){}
-  //    
-  //  }
-  //  public void addText(){ //Probably delete
-  //  
-  //  }
-  //  public void clearScreen(){
-  //  
-  //}
 }

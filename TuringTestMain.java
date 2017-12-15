@@ -1,4 +1,4 @@
-package general;
+package edu.vassar.cs;
 
 //Contains the Main Method
 public class TuringTestMain {
@@ -7,8 +7,8 @@ public class TuringTestMain {
   private static TuringTestGui gui;
 
   /**
- * @param args This is the main method.
- */
+* @param args This is the main method.
+*/
   public static void main(String[] args) {
     guiBuilder = new GuiBuilder();
     gui = guiBuilder.getGui();

@@ -1,4 +1,4 @@
-package general;
+package edu.vassar.cs;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -13,24 +13,22 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-
 public class GuiBuilder {
   private TuringTestGui gui;
 
   public GuiBuilder() {
     gui = new TuringTestGui();
   }
-    
+
   public TuringTestGui getGui() {
     return gui;
   }
 
-  /**
- * This thing builds a window.
- * Input: None
- * Output: None
- * 
- */
+  /*** This thing builds a window.
+    * Input: None
+    * Output: None
+    * 
+    */
   public void buildWindow() {
     //The window that will hold everything.
     gui.window = new JFrame("TuringTest");
@@ -40,9 +38,6 @@ public class GuiBuilder {
     gui.window.setLocation(120,70);
     gui.window.setSize(gui.getWidth(), gui.getHeight());
     gui.window.setVisible(true);
-    //title = JOptionPane.showInputDialog("Please enter a file "+
-    //"to read from and then\n"+
-    //"press \"Process Input\" button: ");
   }
 
   public void buildNorth() {
@@ -64,10 +59,10 @@ public class GuiBuilder {
   }
 
   /**
- * This things builds the status bar.
+ * This thing builds the status bar.
  */
   public void buildStatus() {
-    gui.status = new JLabel("Test JLabel");
+    gui.status = new JLabel("Please type above");
     gui.status.setBackground(Color.WHITE);
     gui.status.setForeground(Color.BLUE);
     gui.status.setOpaque(true);

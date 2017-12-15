@@ -1,4 +1,4 @@
-package general;
+package edu.vassar.cs;
 
 import java.io.IOException;
 import java.util.List;
@@ -22,7 +22,7 @@ public class PhraseProcessor {
     this.sentenceCategorizer = new SentenceCategorizer();
     this.wordCategorizer = new WordCategorizer();
     this.assembler = new
-    ResponseAssembler("C:\\Users\\aslkjf\\eclipse-workspace\\Dictionary.txt");
+    ResponseAssembler("C:\\Users\\soopa\\Desktop\\CMPU203\\turing\\src\\main\\java\\edu\\vassar\\cs\\Dictionary.txt");
   }
 
   public void addPhrase(String phrase) {
@@ -72,8 +72,8 @@ public class PhraseProcessor {
     //And finally gets the finished sentence, ready to be outputted.
     return assembler.assembleSentence();
   }
-  
   public String getPhrase() {
-    return this.phrase;
+    return phrase;
   }
 }
+

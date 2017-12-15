@@ -1,4 +1,4 @@
-package general;
+package edu.vassar.cs;
 
 import java.io.FileInputStream;
 
@@ -24,7 +24,7 @@ public class PhraseSeparator {
     //In order to use the sentence detector, it needs to get the proper Open NLP model, from 
     //where it happens to be right now.
     try {
-      FileInputStream sdReference = new FileInputStream("C:\\OpenNLP_models\\en-sent.bin");
+      FileInputStream sdReference = new FileInputStream("C:\\Users\\soopa\\Desktop\\CMPU203\\turing\\src\\main\\resources\\en-sent.bin");
       SentenceModel model = new SentenceModel(sdReference);
       sentenceDetector = new SentenceDetectorME(model);
       tokenizer = WhitespaceTokenizer.INSTANCE;

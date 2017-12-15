@@ -1,4 +1,4 @@
-package utility;
+package edu.vassar.cs;
 
 public class WeightedWord {
 
