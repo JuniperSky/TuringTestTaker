@@ -72,4 +72,8 @@ public class PhraseProcessor {
     //And finally gets the finished sentence, ready to be outputted.
     return assembler.assembleSentence();
   }
+  
+  public String getPhrase() {
+    return this.phrase;
+  }
 }
