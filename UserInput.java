@@ -1,11 +1,16 @@
-/*package Project;
+package general;
 
-//Note: This class was made into an abstract class with the assumption that multiple ways of
-//obtaining the input would be implemented.
 public abstract class UserInput {
+  private PhraseProcessor processor;
+  private String currentInput;
 
-    public abstract void takeInput(String phrase);
+  public UserInput() {
+    this.processor = new PhraseProcessor();
+  }
 
-    public abstract void sendInput();
+  public abstract void takeInput(String input);
+
+  public void sendInput() {
+    this.processor.addPhrase(currentInput);
+  }
 }
-*/

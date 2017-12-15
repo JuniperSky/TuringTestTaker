@@ -1,37 +1,34 @@
-package Project;
+package general;
 
-public class TypedInput{
-	private PhraseProcessor processor;
-    private String currentInput;		//The input text
-    private String response = "";			//The response text
+import java.io.IOException;
 
-    public TypedInput() {
-    	processor = new PhraseProcessor();
-    }
+public class TypedInput {
+  private PhraseProcessor processor;
+  private String currentInput; //The input text
+  private String response = ""; //The response text
+
+  public TypedInput() {
+    processor = new PhraseProcessor();
+  }
     
-    public void processInput(String phrase) {
-		//The text input from the user is obtained from the TuringTestGUI class
-		currentInput = phrase;
-		
-        
-		this.processor.addPhrase(currentInput);
-		
-		this.processor.displayPhrase();
-		
-		
-		//this.processor.getSentenceType();
-		//this.processor.getRelevantWords();
-		//this.processor.getResponse();
-	}
-	
-	//public void sendInput() {
-		//The text input is sent to the PhraseProcessor class
-    	//this.processor.addPhrase(currentInput);
-    	
-    //}
-    
-    public String returnInput() {
-    	return response;
-    }
+  /**
+ * @param phrase  The phrase the user typed in.
+ * @throws IOException The text file will be used by some related classes,
+ *     provided it's there.
+ */
+  public void processInput(String phrase) throws IOException {
+    //The text input from the user is obtained from the TuringTestGUI class
+    currentInput = phrase;
+    this.processor.addPhrase(currentInput);
+    response = this.processor.getResponse();
+  }
 
+  //public void sendInput() {
+  //The text input is sent to the PhraseProcessor class
+  //this.processor.addPhrase(currentInput);
+  //}
+    
+  public String returnInput() {
+    return response;
+  }
 }
