@@ -14,7 +14,7 @@ public abstract class SentenceMaker {
 	//possible if they weren't in the original document).
 	public boolean nullWordCheck(List<String> list) {
 		for (String word: list) {
-			if (word.equals(null)) {
+			if (word == null) {
 				return true;
 			}
 		}

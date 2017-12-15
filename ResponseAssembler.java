@@ -31,6 +31,7 @@ public class ResponseAssembler {
 		//This just initializes the file...
 		this.wordAssociations = fileName;
 		this.textFile = new File(wordAssociations);
+		tokenizer = WhitespaceTokenizer.INSTANCE;
 	}
 	
 	public void addInputWords(List<List<String>> relevantWords) {
@@ -68,9 +69,8 @@ public class ResponseAssembler {
 		FileReader tempFileReader = new FileReader(textFile);
 		BufferedReader bufferedReader = new BufferedReader(tempFileReader);
 		//For every line we read...
-		for (String currentLine = bufferedReader.readLine(); 
-				!currentLine.isEmpty(); 
-				currentLine = bufferedReader.readLine()) {
+		String currentLine = bufferedReader.readLine();
+		while (currentLine != null) {
 			//If we find the special *** line, it indicates a new set of words to examine.
 			if(currentLine.equals("***")) {
 				//Get the main word associated with the new category.
@@ -92,6 +92,7 @@ public class ResponseAssembler {
 				//And now the actual insertion.
 				greaterNetwork.get(length - 1).getAssociations().add(newWeightedWord);
 			}
+			currentLine = bufferedReader.readLine();
 		}
 		bufferedReader.close();
 	}
@@ -118,8 +119,8 @@ public class ResponseAssembler {
 					break;
 					}
 					//Then, create the new weighted words for us to insert.
-					int length = wordNetwork.getAssociations().size();
-					int newWeight = 1/(length + 1);
+					double length = wordNetwork.getAssociations().size();
+					double newWeight = 1/(length + 1);
 					WeightedWord newWeightedWord = 
 							new WeightedWord(examinedWord, newWeight, partOfSpeech);
 					wordNetwork.getAssociations().add(newWeightedWord);
@@ -186,7 +187,7 @@ public class ResponseAssembler {
 							case "N":
 								if (potentialNouns.contains(word.getWord())) {
 									WeightedWord examinedWord = potentialNouns.findWord(word.getWord());
-									int newWeight = examinedWord.getWeight() + word.getWeight();
+									double newWeight = examinedWord.getWeight() + word.getWeight();
 									potentialNouns.findWord(word.getWord()).changeWeight(newWeight);
 								} else {
 									potentialNouns.getAssociations().add(word);
@@ -195,7 +196,7 @@ public class ResponseAssembler {
 							case "V":
 								if (potentialVerbs.contains(word.getWord())) {
 									WeightedWord examinedWord = potentialVerbs.findWord(word.getWord());
-									int newWeight = examinedWord.getWeight() + word.getWeight();
+									double newWeight = examinedWord.getWeight() + word.getWeight();
 									potentialVerbs.findWord(word.getWord()).changeWeight(newWeight);
 								} else {
 									potentialVerbs.getAssociations().add(word);
@@ -204,7 +205,7 @@ public class ResponseAssembler {
 							case "J":
 								if (potentialAdjectives.contains(word.getWord())) {
 									WeightedWord examinedWord = potentialAdjectives.findWord(word.getWord());
-									int newWeight = examinedWord.getWeight() + word.getWeight();
+									double newWeight = examinedWord.getWeight() + word.getWeight();
 									potentialAdjectives.findWord(word.getWord()).changeWeight(newWeight);
 								} else {
 									potentialAdjectives.getAssociations().add(word);
@@ -213,7 +214,7 @@ public class ResponseAssembler {
 							case "D":
 								if (potentialDeterminers.contains(word.getWord())) {
 									WeightedWord examinedWord = potentialDeterminers.findWord(word.getWord());
-									int newWeight = examinedWord.getWeight() + word.getWeight();
+									double newWeight = examinedWord.getWeight() + word.getWeight();
 									potentialDeterminers.findWord(word.getWord()).changeWeight(newWeight);
 								} else {
 									potentialDeterminers.getAssociations().add(word);
@@ -229,7 +230,7 @@ public class ResponseAssembler {
 		//the "potential" lists we created and find which word has the highest accumulated weight. If
 		//multiple words have the same weight, we just use the one that appears first.
 		this.responseWords = new ArrayList<String>();
-		int topWeight = 0;
+		double topWeight = 0;
 		String noun = null;
 		for(WeightedWord currentWord: potentialNouns.getAssociations()) {
 			if (currentWord.getWeight() > topWeight) {

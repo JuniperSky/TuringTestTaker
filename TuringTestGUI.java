@@ -1,13 +1,13 @@
 
-package Project;
+package generalPackage;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
 
-public class TuringTestGUI extends JPanel implements ActionListener{
+public class TuringTestGUI extends JPanel implements ActionListener {
     //Constants for window size
-	private static int width = 300;
+    private static int width = 300;
     private static int height = 350;
   
     //private instance variables to be instantiated in the constructor
@@ -63,7 +63,11 @@ public class TuringTestGUI extends JPanel implements ActionListener{
     		
     		//Send the latest logRecord to the TypedInput class
     		//The TypedInput class will analyze the user's input
-    		this.ti.processInput(inputText);
+    		try {
+    			this.ti.processInput(inputText);
+    		} catch (IOException e1) {
+    			System.out.println(e1.getMessage());
+    		}
     		
     		//Then, clear JTextField.
     		getUserInput.setText("");

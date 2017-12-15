@@ -4,9 +4,9 @@ public class WeightedWord {
 	
 	private String word;
 	private String partOfSpeech;
-	private int weight;
+	private double weight;
 	
-	public WeightedWord(String word, int weight, String partOfSpeech) {
+	public WeightedWord(String word, double weight, String partOfSpeech) {
 		this.word = word;
 		this.weight = weight;
 		this.partOfSpeech = partOfSpeech;
@@ -16,7 +16,7 @@ public class WeightedWord {
 		return this.word;
 	}
 	
-	public int getWeight() {
+	public double getWeight() {
 		return this.weight;
 	}
 	
@@ -24,7 +24,7 @@ public class WeightedWord {
 		return this.partOfSpeech;
 	}
 	
-	public void changeWeight(int newWeight) {
+	public void changeWeight(double newWeight) {
 		this.weight = newWeight;
 	}
 }
